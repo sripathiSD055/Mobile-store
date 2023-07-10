@@ -1,10 +1,15 @@
 import './App.css';
+import TopNavbar from './components/common/Topnavbar';
+import Navgation from './components/common/Navigation';
+import Homepage from './pages/home';
 
-function App() {
+const  App = () => {
   return (
-    <>
-      abc
-    </>
+    <div>
+      <TopNavbar />
+      <Navgation />
+      <Homepage />
+    </div>
   );
 }
 

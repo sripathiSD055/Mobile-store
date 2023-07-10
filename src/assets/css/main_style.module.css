@@ -1,0 +1,97 @@
+.nav_Links {
+    color: #fff !important;
+    cursor: pointer;
+    text-decoration: none !important;
+    text-transform: capitalize;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Poppins' !important;
+    font-weight: 500 !important;
+}
+
+.nav_Links:hover {
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.company_logo {
+    font-family: 'Poppins' !important;
+}
+
+.nav_splbutton {
+    color: #fff !important;
+    font-family: 'Poppins' !important;
+    text-transform: capitalize !important;
+}
+.banner_carousel {
+    overflow: hidden;
+}
+
+.banner_carousel_image {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.banner_main {
+    position: relative;
+
+    overflow: hidden;
+    padding: 10px;
+}
+
+.banner_content {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.home_service {
+    
+    border:2px solid #6F438D;
+    color: #6F438D;
+    padding: 10px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: .5s;
+    cursor: pointer;
+}
+
+
+.home_service_icon * {
+    font-size: 50px !important;
+    color: #6F438D;
+    transition: .5s;
+}
+.home_service_text{
+    font-size: 20px;
+    font-family: 'Poppins' !important;
+    font-weight: 500;
+}
+.home_service:hover {
+    background-color: #ffffffbb;
+}
+
+.home_banner2{
+    /* background-color: #66023c; */
+    background-color: #e0b0ff;
+    /* background-color: #da70d6; */
+}
+
+@media(max-width:900px) {
+    .nav_Links {
+        color: #000000 !important;
+        display: block;
+    }
+    .banner_content {
+        right: 0;
+    }
+}
