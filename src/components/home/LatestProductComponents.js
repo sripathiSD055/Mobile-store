@@ -1,7 +1,11 @@
-
+import { Button, Typography } from "@mui/material";
 import ProductCard from "../product/ProductcardComponent";
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
-const PopularProducts = [
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Box from '@mui/material/Box';
+
+const Product = [
     {
         title: 'Home entertainment',
         product_img: 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p9_large.jpg',
@@ -45,25 +49,57 @@ const PopularProducts = [
 ]
 
 
-const PopularProduct = () => {
+const settings = {
+    dots: false,
+    infinite: true,
+    speed: 3000,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    responsive : [
+        {
+            breakpoint:990,
+            settings:{
+                slidesToShow: 3,
+            }
+        },
+        {
+            breakpoint:768,
+            settings:{
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint:425,
+            settings:{
+                slidesToShow: 1,
+            }
+        },
+    ]
+};
+
+
+const LatestProduct = () => {
     return (
         <>
-            <Box my={3} >
-                <Typography color={'#003049'} textTransform={'capitalize'} fontWeight={500} fontFamily={'Poppins'} fontSize={25} >Popular Products</Typography>
-                <Grid container spacing={2} mt={1}>
+            <Box my={5}>
+                <Typography color={'#003049'} textTransform={'capitalize'} fontWeight={500} fontFamily={'Poppins'} mb={3} fontSize={25} >Latest Products</Typography>
+                <Slider {...settings} >
                     {
-                        PopularProducts.map((items , index) => {
+                        Product.map((items, index) => {
                             return (
-                                <Grid xs={12}  sm={6}  md={4}  lg={3} item key={index} >
-                                    <ProductCard productTitle={items.title} productimg={items.product_img} productprice={items.price} />
-                                </Grid>
+                                <Box key={index}>
+                                    <Box mx={1}>
+                                        <ProductCard productTitle={items.title} productimg={items.product_img} productprice={items.price} />
+                                    </Box>
+                                </Box>
                             )
                         })
                     }
-                </Grid>
+                </Slider>
             </Box>
         </>
     )
 
 }
-export default PopularProduct;
+export default LatestProduct;

@@ -3,35 +3,24 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Style from '../../assets/css/main_style.module.css';
-import banner1 from '../../assets/img/bannerimage1.jpg'
-import banner2 from '../../assets/img/bannerimage2.jpg'
-import banner3 from '../../assets/img/bannerimage3.jpg'
-import { Button, Typography } from '@mui/material';
+import { Button, Container, Typography } from '@mui/material';
+import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import Box from '@mui/material/Box';
-
-
+import CardMedia from '@mui/material/CardMedia';
 const bannerData = [
     {
-        label: 'Vivo ',
-        imgPath: banner1,
-        product_name: 'Vivo Foldable Y66',
-        description: "Vivo For Life",
-        button: 'Buy Now'
+        label: 'New arrivals collection',
+        imgPath: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/x1.jpg',
+        product_name: 'iPhone Accessories',
+        description: " Snap on a case, wallet, wireless charger battery pack all accessories you’re looking",
+        button: 'Shop Now'
     },
     {
-        label: 'Samsung',
-        imgPath: banner2,
-        product_name: 'Samsung S21',
-        description: "Brand new Flagship mobile",
-        button: 'Explore more'
-    },
-    {
-        label: 'Iphone',
-        imgPath: banner3,
-        product_name: 'Iphone 11 pro',
-        description: "Festival offer",
-        button: 'View Products'
-
+        label: 'SALE UP TO 30% OFF',
+        imgPath: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/x2.jpg',
+        product_name: 'Apple Watch Series',
+        description: "Feature packed at a better value than ever Powerful sensors to monitor your fitness",
+        button: 'Shop Now'
     },
 ];
 
@@ -40,32 +29,35 @@ const BannerSlider = () => {
     const settings = {
         dots: false,
         infinite: true,
-        speed: 1000,
+        speed: 3000,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
-        autoplay:true
+        autoplay: true
     };
 
     return (
-        <Box p={3}>
-            <Slider {...settings}>
+        <Box mb={5}>
+            <Slider {...settings} className={`${Style['banner_slider']}`}>
                 {bannerData.map((step, index) => (
-                    <Box key={step.label}>
+                    <Box key={index}>
                         <Box className={`${Style['banner_main']}`}>
-                            <Box
+                            <CardMedia
                                 className={`${Style['banner_carousel_image']}`}
-                                component="img"
-                                src={step.imgPath}
+                                component="div"
+                                image={step.imgPath}
                                 alt={step.label}
                             />
                             <Box className={`${Style['banner_content']} `}>
-                                <Box className={`${Style['']}`}></Box>
-                                <Box>
-                                    <Typography variant='h2' color='white' mb={3}>{step.product_name}</Typography>
-                                    <Typography variant='h4' color='white' mb={3}>{step.description}</Typography>
-                                    <Button variant='contained'>{step.button}</Button>
-                                </Box>
+                                <Container maxWidth='xl'>
+                                    <Box>
+                                        <Typography component='p' sx={{ fontSize:{ xs:'14px' , sm: '16px' , md:'20px'}, color: '#e52e06', fontFamily: 'Poppins' }} color='#000' mb={2}>{step.label}</Typography>
+                                        <Typography component='p' sx={{ fontSize: {xs:'20px' ,sm:'30px',md:'40px'}, color: '#003049', fontWeight: 600, fontFamily: 'Poppins' }} color='#000' mb={2}>{step.product_name}</Typography>
+                                        <Typography component='p' sx={{ fontSize: {xs:'16px' , sm:'18px'}, color: '#333333', fontFamily: 'Poppins', lineHeight: '35px' , width : {sm:'40%'} }} color='#000' mb={2}>{step.description}</Typography>
+                                        <Button variant='contained' className={`${Style['bannerbtn']}`} endIcon={<ArrowForwardRoundedIcon />} py={3}>{step.button}</Button>
+                                    </Box>
+                                </Container>
+
                             </Box>
                         </Box>
                     </Box>
