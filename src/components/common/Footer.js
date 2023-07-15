@@ -1,32 +1,7 @@
 
 import { Box, Container, Grid, Typography } from "@mui/material"
 import Style from '../../assets/css/main_style.module.css';
-
-const footerData = [
-    {
-        Footerheading: 'Contact us',
-        Footertext1: 'Company',
-        Footertext2: 'No. 1259 Freedom, New York , United States',
-        Footertext3: '+91-987654321',
-        Footertext4: 'demo@exampledemo.com',
-    },
-    {
-        Footerheading: 'Information',
-        Footertext1: 'Product Support',
-        Footertext2: 'Checkout',
-        Footertext3: 'License Policy',
-        Footertext4: 'Affiliate',
-    },
-    {
-        Footerheading: 'Customer Service',
-        Footertext1: 'Help Center',
-        Footertext2: 'Redeem Voucher',
-        Footertext3: 'Contact Us',
-        Footertext4: 'Policies & Rules',
-    },
-
-
-]
+import  jsonData from '../../assets/json/jsonData';
 
 
 const Footer = () => {
@@ -37,7 +12,7 @@ const Footer = () => {
                     <Box component='div' py={5} >
                         <Grid container spacing={1}>
                             {
-                                footerData.map((footercolumns, index) => {
+                                jsonData.footerData.map((footercolumns, index) => {
                                     return (
                                         <Grid item xs={12} sm={6} md={3} key={index}>
                                             <Typography  fontSize={{xs:18 , sm:20 , md:23}} mb={2} fontFamily={'Poppins'} fontWeight={500} color={'#fff'}>

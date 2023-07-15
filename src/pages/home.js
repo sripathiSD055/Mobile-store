@@ -8,8 +8,10 @@ import CountdownComponent from "../components/home/CountdownComponent";
 import LatestProduct from "../components/home/LatestProductComponents";
 import FeaturesComponent from "../components/home/FeaturesComponent";
 import PromotionBannerComponent from "../components/home/PromotionBannerComponent";
-
+import  jsonData from '../assets/json/jsonData'
 const Homepage = () => {
+    
+    console.log(jsonData)
     
     return (
         <>

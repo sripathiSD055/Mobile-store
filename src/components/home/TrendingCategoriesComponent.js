@@ -7,36 +7,10 @@ import Style from '../../assets/css/main_style.module.css';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import  jsonData from '../../assets/json/jsonData';
 
 
 const TrendingCategories = () => {
-    const TrendingCategories = [
-        {
-            title: 'iphone',
-            categories_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/p7_300x300.jpg'
-        },
-        {
-            title: 'Mini speakers',
-            categories_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/11_300x300.jpg'
-        },
-        {
-            title: 'Tablets',
-            categories_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/9_300x300.jpg'
-        },
-        {
-            title: 'Headphones',
-            categories_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/12_300x300.jpg'
-        },
-        {
-            title: 'Laptops',
-            categories_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/10_300x300.jpg'
-        },
-        {
-            title: 'Accessories',
-            categories_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/p4_300x300.jpg'
-        },
-    ]
-
     const settings = {
         dots: false,
         infinite: true,
@@ -87,7 +61,7 @@ const TrendingCategories = () => {
                 <Typography variant='h5' sx={{ fontFamily: 'Poppins' }} fontWeight='500' color='#003049'>Trending Categories</Typography>
                 <Box mt={3}>
                     <Slider {...settings}>
-                        {TrendingCategories.map((trendItems, index) => {
+                        {jsonData.TrendingCategories.map((trendItems, index) => {
                             return (
                                 <Box  xs={2} key={index}>
                                     <Card sx={{ maxWidth: 345, mx: 1, border: '2px solid #f8f8f8', boxShadow: 'none' }} className={`${Style['trendingCat_card']}`}>

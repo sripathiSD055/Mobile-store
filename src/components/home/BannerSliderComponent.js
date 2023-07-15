@@ -7,22 +7,7 @@ import { Button, Container, Typography } from '@mui/material';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import Box from '@mui/material/Box';
 import CardMedia from '@mui/material/CardMedia';
-const bannerData = [
-    {
-        label: 'New arrivals collection',
-        imgPath: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/x1.jpg',
-        product_name: 'iPhone Accessories',
-        description: " Snap on a case, wallet, wireless charger battery pack all accessories you’re looking",
-        button: 'Shop Now'
-    },
-    {
-        label: 'SALE UP TO 30% OFF',
-        imgPath: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/x2.jpg',
-        product_name: 'Apple Watch Series',
-        description: "Feature packed at a better value than ever Powerful sensors to monitor your fitness",
-        button: 'Shop Now'
-    },
-];
+import  jsonData from '../../assets/json/jsonData';
 
 
 const BannerSlider = () => {
@@ -39,7 +24,7 @@ const BannerSlider = () => {
     return (
         <Box mb={5}>
             <Slider {...settings} className={`${Style['banner_slider']}`}>
-                {bannerData.map((step, index) => (
+                {jsonData.bannerData.map((step, index) => (
                     <Box key={index}>
                         <Box className={`${Style['banner_main']}`}>
                             <CardMedia
