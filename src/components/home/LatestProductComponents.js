@@ -47,7 +47,7 @@ const LatestProduct = () => {
                             return (
                                 <Box key={index}>
                                     <Box mx={1}>
-                                        <ProductCard productId = {items.product_id} productTitle={items.product_title} productimg={items.product_img} productprice={items.price} />
+                                        <ProductCard productId = {items.product_id} productTitle={items.product_title} productimg={items.product_img} productprice={items.price} productDes = {items.product_des} />
                                     </Box>
                                 </Box>
                             )

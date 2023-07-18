@@ -154,7 +154,24 @@
 .footer_link:hover{
     color: #e52e06;
 }
+.productModal_Input > div{
+    border-radius: 0;
+}
+.productModal_Input  input{
+    height: 30px;
+    text-align:center ;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 0;
+}
+.productModal_Input  fieldset{
+    border: 0 !important;
+}
 
+.quickView_Btn:hover{
+    background: #eeefef !important;
+    box-shadow: none !important;
+}
 
 @media(max-width:900px) {
     .nav_Links {

@@ -7,7 +7,8 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import { Badge, Drawer, Link, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import { Badge, Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import { Link } from 'react-router-dom';
 import Style from '../../assets/css/main_style.module.css';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
@@ -79,7 +80,7 @@ function Navgation(props) {
                             <Link
 
                                 to='/'
-                                sx={{ my: 2, fontSize: '25px', textDecoration: 'none', fontFamily: 'Poppins', color: '#e52e06', fontWeight: 600 }}
+                                style={{ my: 2, fontSize: '25px', textDecoration: 'none', fontFamily: 'Poppins', color: '#e52e06', fontWeight: 600 }}
                             >
                                 Company
                             </Link>
@@ -107,6 +108,8 @@ function Navgation(props) {
                             </IconButton>
                             <IconButton
                                 size="medium" 
+                                component='Link'
+                                to='./cart'
                             >
                                 <Badge badgeContent={cartCount} color='error' showZero  >
                                     <ShoppingBagOutlinedIcon sx={{ fontSize: '25px' }} className={`${Style['nav_Links']}`} />

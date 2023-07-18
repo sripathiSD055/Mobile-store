@@ -9,10 +9,7 @@ import LatestProduct from "../components/home/LatestProductComponents";
 import FeaturesComponent from "../components/home/FeaturesComponent";
 import PromotionBannerComponent from "../components/home/PromotionBannerComponent";
 import  jsonData from '../assets/json/jsonData'
-const Homepage = () => {
-    
-    console.log(jsonData)
-    
+const Homepage = () => {     
     return (
         <>
             <BannerSlider />
@@ -37,8 +34,6 @@ const Homepage = () => {
                 <PopularProduct />
             </Container>
             <FeaturesComponent />
-
-
         </>
     )
 }

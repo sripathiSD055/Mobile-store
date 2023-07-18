@@ -29,7 +29,7 @@ const PopularProduct = () => {
                         jsonData.productData.map((items, index) => {
                             return (
                                 <Grid xs={12} sm={6} md={4} lg={3} item key={index} >
-                                    <ProductCard addToCart={addToCart} viewProduct={viewProduct} productId={items.product_id} productTitle={items.product_title} productimg={items.product_img} productprice={items.price} />
+                                    <ProductCard addToCart={addToCart} viewProduct={viewProduct} productId={items.product_id} productTitle={items.product_title} productimg={items.product_img} productDes = {items.product_des} productprice={items.price} />
                                 </Grid>
                             )
                         })
