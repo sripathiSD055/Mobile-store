@@ -61,7 +61,7 @@ const TrendingCategories = () => {
                 <Typography variant='h5' sx={{ fontFamily: 'Poppins' }} fontWeight='500' color='#003049'>Trending Categories</Typography>
                 <Box mt={3}>
                     <Slider {...settings}>
-                        {jsonData.TrendingCategories.map((trendItems, index) => {
+                        {jsonData.Categories.map((trendItems, index) => {
                             return (
                                 <Box  xs={2} key={index}>
                                     <Card sx={{ maxWidth: 345, mx: 1, border: '2px solid #f8f8f8', boxShadow: 'none' }} className={`${Style['trendingCat_card']}`}>
@@ -69,7 +69,7 @@ const TrendingCategories = () => {
                                             className={`${Style['trendingcat_img']}`}
                                             component='img'
                                             sx={{ height: 140, objectFit: 'contain' }}
-                                            src={trendItems.categories_url}
+                                            src={trendItems.image_url}
                                             title={trendItems.title}
                                         />
                                         <CardContent>

@@ -9,12 +9,11 @@ import Box from '@mui/material/Box';
 import CardMedia from '@mui/material/CardMedia';
 import  jsonData from '../../assets/json/jsonData';
 
-
 const BannerSlider = () => {
     const settings = {
         dots: false,
         infinite: true,
-        speed: 3000,
+        speed: 5000,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
@@ -42,7 +41,6 @@ const BannerSlider = () => {
                                         <Button variant='contained' className={`${Style['bannerbtn']}`} endIcon={<ArrowForwardRoundedIcon />} py={3}>{step.button}</Button>
                                     </Box>
                                 </Container>
-
                             </Box>
                         </Box>
                     </Box>

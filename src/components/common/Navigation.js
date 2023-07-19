@@ -6,18 +6,17 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import { Badge, Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Badge, Drawer, List, ListItem, ListItemButton, ListItemText, Typography } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 import Style from '../../assets/css/main_style.module.css';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
-import  jsonData from '../../assets/json/jsonData';
+import jsonData from '../../assets/json/jsonData';
 
 
 function Navgation(props) {
     const [isOpenToggle, setisOpenToggle] = useState(false);
-    const[cartCount , setCartCount] = useState(0)
+    const [cartCount, setCartCount] = useState(0)
 
     const toggleDrawer = (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -25,11 +24,6 @@ function Navgation(props) {
         }
         setisOpenToggle(true);
     };
-
-     const addToCart = () =>{
-        setCartCount(cartCount + 1)
-        console.log(cartCount)
-    }
 
 
 
@@ -49,7 +43,7 @@ function Navgation(props) {
                             >
                                 <MenuIcon />
                             </IconButton>
-                            <Drawer open={isOpenToggle} onClose={() => setisOpenToggle(false)} sx={{ display:{ xs:'block' , md:'none' }} }>
+                            <Drawer open={isOpenToggle} onClose={() => setisOpenToggle(false)} sx={{ display: { xs: 'block', md: 'none' } }}>
                                 <Box
                                     sx={{ width: isOpenToggle ? 250 : 0 }}
                                     role="presentation"
@@ -57,16 +51,16 @@ function Navgation(props) {
                                     onKeyDown={toggleDrawer}
                                 >
                                     <List>
-                                        {jsonData.AnchorLinks.map((anchor, index) => (                     
-                                            <ListItem key={index} disablePadding> 
+                                        {jsonData.AnchorLinks.map((anchor, index) => (
+                                            <ListItem key={index} disablePadding>
                                                 <ListItemButton>
                                                     <ListItemText>
-                                                        <Link key={index}
+                                                        <NavLink key={index}
                                                             className={`${Style['nav_Links']}`}
                                                             to={anchor.linkto}
                                                         >
                                                             {anchor.anchorName}
-                                                        </Link>
+                                                        </NavLink>
                                                     </ListItemText>
                                                 </ListItemButton>
                                             </ListItem>
@@ -77,24 +71,48 @@ function Navgation(props) {
                             </Drawer>
                         </Box>
                         <Box>
-                            <Link
+                            <NavLink
 
                                 to='/'
                                 style={{ my: 2, fontSize: '25px', textDecoration: 'none', fontFamily: 'Poppins', color: '#e52e06', fontWeight: 600 }}
                             >
                                 Company
-                            </Link>
+                            </NavLink>
                         </Box>
                         <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '30px', justifyContent: 'center' }}>
-
                             {
                                 jsonData.AnchorLinks.map((anchor, index) => {
-                                    return <Link key={index}
-                                        className={`${Style['nav_Links']}`}
-                                        to={anchor.linkto}
-                                    >
-                                        {anchor.anchorName}
-                                    </Link>
+                                    if (!anchor.submenu) {
+                                        return <NavLink key={index} id={anchor.anchorName}
+                                            className={`${Style['nav_Links']}`}
+                                            to={anchor.linkto}
+                                        >
+                                            {anchor.anchorName}
+                                        </NavLink>
+                                    }
+                                    return <Box key={index} position={'relative'} display={'flex'} alignItems={'center'} className={`${Style['hasChild']}`} >
+                                        <NavLink id={anchor.anchorName}
+                                            className={`${Style['nav_Links']}`}
+                                            to={anchor.linkto}
+                                        >
+                                            {anchor.anchorName}
+                                        </NavLink>
+                                        <Box position={'absolute'} top={'40px'} left={0} sx={{ backgroundColor: '#fff', display: 'none', width:'200px' }} className={`${Style['navDropdownContent']}`}>
+                                            <List>
+                                                {
+                                                    anchor.submenu.map((submenu, index) => {
+                                                        return <ListItem key={index} >
+                                                            <NavLink  color="#fff" className={`${Style['nav_Links']}`} to={submenu.url}>{submenu.title}</NavLink>
+                                                        </ListItem>
+
+                                                    })
+                                                }
+                                            </List>
+
+                                        </Box>
+                                    </Box>
+
+
 
                                 })
                             }
@@ -107,9 +125,9 @@ function Navgation(props) {
                                 <FavoriteBorderRoundedIcon sx={{ fontSize: '25px' }} className={`${Style['nav_Links']}`} />
                             </IconButton>
                             <IconButton
-                                size="medium" 
-                                component='Link'
-                                to='./cart'
+                                size="medium"
+                                component='a'
+                                to='/cart'
                             >
                                 <Badge badgeContent={cartCount} color='error' showZero  >
                                     <ShoppingBagOutlinedIcon sx={{ fontSize: '25px' }} className={`${Style['nav_Links']}`} />

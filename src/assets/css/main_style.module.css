@@ -173,6 +173,10 @@
     box-shadow: none !important;
 }
 
+.hasChild:hover .navDropdownContent{
+    display: block;
+    transition: .5s;
+}
 @media(max-width:900px) {
     .nav_Links {
         color: #000000 !important;

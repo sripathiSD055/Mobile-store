@@ -1,9 +1,46 @@
 const jsonData = {
+    // AnchorLinks: [
+    //     { anchorName: 'Categories', linkto: '/categories' },
+    //     { anchorName: 'About', linkto: '/about' },
+    //     { anchorName: 'Contact us', linkto: '/' },
+    // ],
+
     AnchorLinks: [
-        { anchorName: 'Categories', linkto: '/' },
+        {
+            anchorName: 'Categories', linkto: '/categories',
+            submenu: [{
+                title: 'iphone',
+                url: '/iphone',
+            },
+            {
+                title: 'Mini speakers',
+                url: 'minispeakers',
+            },
+            {
+                title: 'Tablets',
+                url: 'tablets',
+            },
+            {
+                title: 'Headphones',
+                url: 'headphones',
+            },
+            {
+                title: 'Laptops',
+                url: 'laptops',
+            },
+            {
+                title: 'Accessories',
+                url: 'accessories',
+            },
+            ]
+        },
         { anchorName: 'About', linkto: '/about' },
-        { anchorName: 'Contact us', linkto: '/' },
+        { anchorName: 'Contact', linkto: '/' },
     ],
+
+
+
+
 
     bannerData: [
         {
@@ -27,112 +64,112 @@ const jsonData = {
             product_id: 101,
             product_title: 'Home entertainment',
             product_img: 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p9_1024x1024.jpg',
-            product_des :'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            product_des: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             price: 70.00,
             product_Gal: [
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/13_1024x1024.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p2_ea1ad2a2-ba0d-4dd2-b29a-e51fd931583b_1024x1024.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_1024x1024_crop_center.jpg',
-                'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'                
+                'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'
             ]
         },
         {
             product_id: 102,
             product_title: 'Drou watch ultra',
             product_img: 'https://drou-electronics-store.myshopify.com/cdn/shop/products/13_1024x1024.jpg',
-            product_des :'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            product_des: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             price: 55.00,
-            product_Gal:[
+            product_Gal: [
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/13_1024x1024.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p2_ea1ad2a2-ba0d-4dd2-b29a-e51fd931583b_1024x1024.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_1024x1024_crop_center.jpg',
-                'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'                
+                'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'
             ]
         },
         {
             product_id: 103,
             product_title: 'Droubook space gray',
             product_img: 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p2_ea1ad2a2-ba0d-4dd2-b29a-e51fd931583b_1024x1024.jpg',
-            product_des :'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            product_des: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             price: 60.00,
-            product_Gal:[
+            product_Gal: [
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/13_1024x1024.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p2_ea1ad2a2-ba0d-4dd2-b29a-e51fd931583b_1024x1024.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_1024x1024_crop_center.jpg',
-                'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'                
+                'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'
             ]
         },
         {
             product_id: 104,
             product_title: 'Homepod mini 2022',
             product_img: 'https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_1024x1024_crop_center.jpg',
-            product_des :'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            product_des: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             price: 77.00,
-            product_Gal:[
+            product_Gal: [
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/13_1024x1024.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p2_ea1ad2a2-ba0d-4dd2-b29a-e51fd931583b_1024x1024.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_1024x1024_crop_center.jpg',
-                'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'                
+                'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'
             ]
         },
         {
             product_id: 105,
             product_title: 'DroSafe Charger',
             product_img: 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_1024x1024_crop_center.jpg',
-            product_des :'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            product_des: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             price: 90.00,
-            product_Gal:[
+            product_Gal: [
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/13_1024x1024.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p2_ea1ad2a2-ba0d-4dd2-b29a-e51fd931583b_1024x1024.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_1024x1024_crop_center.jpg',
-                'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'                
+                'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'
             ]
         },
         {
             product_id: 106,
             product_title: 'UPad Pro black',
             product_img: 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg',
-            product_des :'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            product_des: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             price: 55.00,
-            product_Gal:[
+            product_Gal: [
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/13_1024x1024.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p2_ea1ad2a2-ba0d-4dd2-b29a-e51fd931583b_1024x1024.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_1024x1024_crop_center.jpg',
-                'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'                
+                'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'
             ]
         },
         {
             product_id: 107,
             product_title: 'DrouPods Pro white',
             product_img: 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p4_b019dfc8-3740-44ac-8916-6db66a336feb_1024x1024.jpg',
-            product_des :'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            product_des: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             price: 120.00,
-            product_Gal:[
+            product_Gal: [
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/13_1024x1024.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p2_ea1ad2a2-ba0d-4dd2-b29a-e51fd931583b_1024x1024.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_1024x1024_crop_center.jpg',
-                'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'                
+                'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'
             ]
         },
         {
             product_id: 108,
             product_title: 'Uphone lightning cable',
             product_img: 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p5_61c8ce6b-3afa-4276-a285-f98e4d5c7f67_1024x1024_crop_center.jpg',
-            product_des :'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            product_des: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             price: 40.00,
             product_Gal: [
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/13_1024x1024.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p2_ea1ad2a2-ba0d-4dd2-b29a-e51fd931583b_1024x1024.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_1024x1024_crop_center.jpg',
-                'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'                
+                'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'
             ]
         },
     ],
@@ -159,30 +196,36 @@ const jsonData = {
             Footertext4: 'Policies & Rules',
         },
     ],
-    TrendingCategories: [
+    Categories: [
         {
             title: 'iphone',
-            categories_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/p7_300x300.jpg'
+            image_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/p7_300x300.jpg',
+            url: 'iphone',
         },
         {
             title: 'Mini speakers',
-            categories_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/11_300x300.jpg'
+            image_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/11_300x300.jpg',
+            url: 'minispeakers',
         },
         {
             title: 'Tablets',
-            categories_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/9_300x300.jpg'
+            image_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/9_300x300.jpg',
+            url: 'tablets',
         },
         {
             title: 'Headphones',
-            categories_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/12_300x300.jpg'
+            image_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/12_300x300.jpg',
+            url: 'headphones',
         },
         {
             title: 'Laptops',
-            categories_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/10_300x300.jpg'
+            image_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/10_300x300.jpg',
+            url: 'laptops',
         },
         {
             title: 'Accessories',
-            categories_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/p4_300x300.jpg'
+            image_url: 'https://drou-electronics-store.myshopify.com/cdn/shop/files/p4_300x300.jpg',
+            url: 'accessories',
         },
     ],
     Custombanner: [
