@@ -3,7 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import { Badge, Drawer, List, ListItem, ListItemButton, ListItemText, Typography } from '@mui/material';
@@ -11,8 +10,11 @@ import { NavLink } from 'react-router-dom';
 import Style from '../../assets/css/main_style.module.css';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
 import jsonData from '../../assets/json/jsonData';
-
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 function Navgation(props) {
     const [isOpenToggle, setisOpenToggle] = useState(false);
@@ -32,7 +34,7 @@ function Navgation(props) {
             <AppBar position="sticky" sx={{ backgroundColor: '#fff', py: 1, boxShadow: '0px 0px 20px 2px #05050514' }} >
                 <Container maxWidth="xl">
                     <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+                        <Box sx={{ display: { xs: 'flex', lg: 'none' } }}>
                             <IconButton
                                 size="large"
                                 aria-label="account of current user"
@@ -43,17 +45,17 @@ function Navgation(props) {
                             >
                                 <MenuIcon />
                             </IconButton>
-                            <Drawer open={isOpenToggle} onClose={() => setisOpenToggle(false)} sx={{ display: { xs: 'block', md: 'none' } }}>
+                            <Drawer open={isOpenToggle} onClose={() => setisOpenToggle(false)} sx={{ display: { xs: 'block', lg: 'none' } }}>
                                 <Box
-                                    sx={{ width: isOpenToggle ? 250 : 0 }}
+                                    sx={{ width: isOpenToggle ? 250 : 0 , padding:'10px'}}
                                     role="presentation"
                                     onClick={toggleDrawer}
                                     onKeyDown={toggleDrawer}
                                 >
                                     <List>
-                                        {jsonData.AnchorLinks.map((anchor, index) => (
-                                            <ListItem key={index} disablePadding>
-                                                <ListItemButton>
+                                        {jsonData.AnchorLinks.map((anchor, index) => {
+                                            if (!anchor.submenu) {
+                                                return < ListItem key={index} disablePadding >
                                                     <ListItemText>
                                                         <NavLink key={index}
                                                             className={`${Style['nav_Links']}`}
@@ -62,9 +64,38 @@ function Navgation(props) {
                                                             {anchor.anchorName}
                                                         </NavLink>
                                                     </ListItemText>
-                                                </ListItemButton>
+                                                </ListItem>
+                                            }
+                                            return < ListItem key={index} disablePadding >
+                                                <ListItemText sx={{margin:0}}>
+                                                    <Accordion elevation={0} >
+                                                        <AccordionSummary className={`${Style['sidemenu_dropdown']}`}
+                                                            sx={{padding:0 , margin:0 , minHeight:0}}
+                                                            expandIcon={<ExpandMoreIcon />}        
+                                                        >
+                                                            <NavLink key={index}
+                                                                className={`${Style['nav_Links']}`}
+                                                                to={anchor.linkto}
+                                                            >
+                                                                {anchor.anchorName}
+                                                            </NavLink>
+                                                        </AccordionSummary>
+                                                        <AccordionDetails sx={{padding:0}}>
+                                                            <List sx={{padding:0  , paddingBottom:'10px'}}>
+                                                                {
+                                                                    anchor.submenu.map((submenu, index) => {
+                                                                        return <ListItem key={index} sx={{padding:'5px 15px'}}>
+                                                                            <NavLink color="#fff" className={`${Style['nav_Links']}`} to={submenu.url}>{submenu.title}</NavLink>
+                                                                        </ListItem>
+                                                                    })
+                                                                }
+                                                            </List>
+                                                        </AccordionDetails>
+                                                    </Accordion>
+                                                </ListItemText>
+
                                             </ListItem>
-                                        ))
+                                        })
                                         }
                                     </List>
                                 </Box>
@@ -79,7 +110,7 @@ function Navgation(props) {
                                 Company
                             </NavLink>
                         </Box>
-                        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '30px', justifyContent: 'center' }}>
+                        <Box sx={{ display: { xs: 'none', lg: 'flex' }, gap: '30px', justifyContent: 'center' }}>
                             {
                                 jsonData.AnchorLinks.map((anchor, index) => {
                                     if (!anchor.submenu) {
@@ -97,18 +128,17 @@ function Navgation(props) {
                                         >
                                             {anchor.anchorName}
                                         </NavLink>
-                                        <Box position={'absolute'} top={'40px'} left={0} sx={{ backgroundColor: '#fff', display: 'none', width:'200px' }} className={`${Style['navDropdownContent']}`}>
+                                        <Box position={'absolute'} top={'35px'} left={0} sx={{ backgroundColor: '#fff', display: 'none', width: '200px', borderRadius: '5px', boxShadow: '0px 5px 10px 3px #0000001c' }} className={`${Style['navDropdownContent']}`}>
                                             <List>
                                                 {
                                                     anchor.submenu.map((submenu, index) => {
+                                                        console.log(anchor.anchorName)
                                                         return <ListItem key={index} >
-                                                            <NavLink  color="#fff" className={`${Style['nav_Links']}`} to={submenu.url}>{submenu.title}</NavLink>
+                                                            <NavLink color="#fff" className={`${Style['nav_Links']}`} to={anchor.anchorName+'/'+submenu.title} style={{textTransform:'capitalize'}}>{submenu.title}</NavLink>
                                                         </ListItem>
-
                                                     })
                                                 }
                                             </List>
-
                                         </Box>
                                     </Box>
 
@@ -136,7 +166,7 @@ function Navgation(props) {
                         </Box>
                     </Toolbar>
                 </Container>
-            </AppBar>
+            </AppBar >
         </>
     );
 }

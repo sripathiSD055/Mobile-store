@@ -1,36 +1,27 @@
 const jsonData = {
-    // AnchorLinks: [
-    //     { anchorName: 'Categories', linkto: '/categories' },
-    //     { anchorName: 'About', linkto: '/about' },
-    //     { anchorName: 'Contact us', linkto: '/' },
-    // ],
 
     AnchorLinks: [
         {
-            anchorName: 'Categories', linkto: '/categories',
+            anchorName: 'categories', linkto: '/categories',
             submenu: [{
                 title: 'iphone',
-                url: '/iphone',
             },
             {
-                title: 'Mini speakers',
-                url: 'minispeakers',
+                title: 'minispeakers',
             },
             {
-                title: 'Tablets',
-                url: 'tablets',
+                title: 'tablets',
             },
             {
-                title: 'Headphones',
-                url: 'headphones',
+                title: 'headphones',
+                
             },
             {
-                title: 'Laptops',
-                url: 'laptops',
+                title: 'laptops',
             },
             {
-                title: 'Accessories',
-                url: 'accessories',
+                title: 'accessories',
+                
             },
             ]
         },
@@ -72,7 +63,8 @@ const jsonData = {
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'
-            ]
+            ],
+            product_stock:100,
         },
         {
             product_id: 102,
@@ -86,7 +78,8 @@ const jsonData = {
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'
-            ]
+            ],
+            product_stock:80,
         },
         {
             product_id: 103,
@@ -100,7 +93,8 @@ const jsonData = {
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'
-            ]
+            ],
+            product_stock:77,
         },
         {
             product_id: 104,
@@ -114,7 +108,8 @@ const jsonData = {
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'
-            ]
+            ],
+            product_stock:140,
         },
         {
             product_id: 105,
@@ -128,7 +123,8 @@ const jsonData = {
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'
-            ]
+            ],
+            product_stock:110,
         },
         {
             product_id: 106,
@@ -142,7 +138,8 @@ const jsonData = {
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'
-            ]
+            ],
+            product_stock:66,
         },
         {
             product_id: 107,
@@ -156,7 +153,8 @@ const jsonData = {
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'
-            ]
+            ],
+            product_stock:52,
         },
         {
             product_id: 108,
@@ -170,7 +168,8 @@ const jsonData = {
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_1024x1024_crop_center.jpg',
                 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_1024x1024_crop_center.jpg'
-            ]
+            ],
+            product_stock:50,
         },
     ],
     footerData: [
@@ -243,7 +242,9 @@ const jsonData = {
             button: 'shop now',
             image: 'https://images.samsung.com/is/image/samsung/p6pim/levant/2302/gallery/levant-galaxy-s23-s918-sm-s918bzkqmea-534853556?$650_519_PNG$'
         },
-
+    ],
+    BrandName : [
+        'apple' , 'samsung', 'redmi' , 'vivo' , 'oppo', 'infinix' , 'realme' , 'poco' , 'xiaomi'
     ]
 }
 export default jsonData;

@@ -100,12 +100,12 @@ const ProductQuickview = (props) => {
                                         />
                                         <Button variant='contained' className={`${Style['quickView_Btn']}`} sx={{ backgroundColor: '#eeefef', minWidth: '30px', color: '#000', borderRadius: '0px 4px 4px 0px', boxShadow: '0' }} onClick={increaseQnty}>+</Button>
                                     </Box>
-                                    <Button fullWidth variant='outlined'>Add To Cart</Button>
+                                    <Button fullWidth variant='outlined'   color='inherit' sx={{border:'1px solid #e52e06' , color:'#e52e06',}}>Add To Cart</Button>
                                 </Box>
-                                <Button fullWidth variant="contained">Buy Now</Button>
+                                <Button fullWidth variant="contained"  color='error' sx={{backgroundColor:'#e52e06'}}>Buy Now</Button>
                                 <Box mt={2} display={'flex'} gap={1}>
-                                    <Button startIcon={<FavoriteBorderOutlinedIcon />}>Add to wishlist</Button>
-                                    <Button startIcon={<CompareOutlinedIcon />}>Compare</Button>
+                                    <Button color='error' sx={{backgroundColor:'#e52e06'}} startIcon={<FavoriteBorderOutlinedIcon />}>Add to wishlist</Button>
+                                    <Button color='error' sx={{backgroundColor:'#e52e06'}} startIcon={<CompareOutlinedIcon />}>Compare</Button>
                                 </Box>
                             </Box>
                         </Grid>

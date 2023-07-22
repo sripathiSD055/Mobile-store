@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Box from '@mui/material/Box';
 import  jsonData from '../../assets/json/jsonData';
+import { useState } from "react";
 
 const settings = {
     dots: false,
@@ -37,6 +38,7 @@ const settings = {
 
 
 const LatestProduct = () => {
+
     return (
         <>
             <Box my={5}>
@@ -47,7 +49,7 @@ const LatestProduct = () => {
                             return (
                                 <Box key={index}>
                                     <Box mx={1}>
-                                        <ProductCard productId = {items.product_id} productTitle={items.product_title} productimg={items.product_img} productprice={items.price} productDes = {items.product_des} />
+                                        <ProductCard viewType={true} productId = {items.product_id} productTitle={items.product_title} productimg={items.product_img} productprice={items.price} productDes = {items.product_des} />
                                     </Box>
                                 </Box>
                             )

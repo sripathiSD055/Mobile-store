@@ -2,15 +2,18 @@
 import { Link } from "react-router-dom";
 import Button from '@mui/material/Button'
 import { useNavigate } from "react-router-dom";
-const About_Page = () =>{
+import { Typography, Container } from "@mui/material";
+import { Box } from "@mui/system";
+
+const About_Page = () => {
     const navigate = useNavigate();
-    return(
+    return (
         <>
-            About Page
-            {/* <Link to='/about/cart'>cart</Link> */}
-            <Button variant="text" color="primary" onClick={() => navigate('cart' , {replace : '/'})}>
-              Go to cart
-            </Button>
+            <Container maxWidth="xl">
+               <Box >
+                    <img></img>
+               </Box>
+            </Container>
         </>
     )
 }
