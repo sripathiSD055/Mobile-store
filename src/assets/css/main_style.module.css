@@ -188,14 +188,38 @@
 .sortbyBtn > div{
     padding : 10px;
 }
+.ProductTitle{
+    font-size:18px;
+    color:#000;
+    font-family:'Poppins';
+    font-weight:500 !important;
+    text-decoration:none!important;
+}
+.ProductTitle:hover{
+  
+    color:#e52e06;
+    
+}
 .productImagesx{
     height: 100% !important;
         
 }
 .productImagesx img{
     height: 100% !important;
+
+}
+.productmobileImg{
+    display:none;
 }
 
+@media(max-width:599px) {
+    .productmainImg{
+        display:none;
+    }
+    .productmobileImg{
+        display:block;
+    }
+}
 @media(max-width:900px) {
     .nav_Links {
         color: #000000 !important;

@@ -11,11 +11,12 @@ import jsonData from '../../assets/json/jsonData';
 import { useState } from "react";
 import ProductQuickview from "./ProductQuickview";
 import { useEffect } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const ProductCard = (props) => {
     const [open, setOpen] = useState(false);
     const handleClose = () => setOpen(false);
-    
+    const navigateProduct = useNavigate()
 
     const productModal = (propsId) => {
         jsonData.productData.map((items) => {
@@ -24,6 +25,7 @@ const ProductCard = (props) => {
             }
         })
     }
+   
     return (
         <>
             <Card className={`${Style['product_Card']}`} sx={{ display:  props.viewType ? '' : {xs :'block' , sm:'flex'} }} elevation={0}>
@@ -47,9 +49,9 @@ const ProductCard = (props) => {
                 <CardContent>
                     <Box display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
                         <Box>
-                            <Typography gutterBottom fontSize={{ xs: 16, sm: 18 }} fontFamily={'Poppins'} fontWeight={500} component="div">
+                            <Link onClick={() => navigateProduct('product')}  className={`${Style['ProductTitle']}`} component="a">
                                 {props.productTitle}
-                            </Typography>
+                            </Link>
                             <Typography fontSize={18} fontWeight={500} mt={1} color='#e52e06' fontFamily={'Poppins'}>${props.productprice}</Typography>
                         </Box>
                         <Box>

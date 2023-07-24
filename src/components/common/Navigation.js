@@ -132,7 +132,6 @@ function Navgation(props) {
                                             <List>
                                                 {
                                                     anchor.submenu.map((submenu, index) => {
-                                                        console.log(anchor.anchorName)
                                                         return <ListItem key={index} >
                                                             <NavLink color="#fff" className={`${Style['nav_Links']}`} to={anchor.anchorName+'/'+submenu.title} style={{textTransform:'capitalize'}}>{submenu.title}</NavLink>
                                                         </ListItem>

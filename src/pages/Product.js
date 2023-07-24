@@ -18,17 +18,19 @@ import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDown
 const Product = () => {
 
     const [TotalQuantity, setTotalQuantity] = useState('1');
+    const ProductSlider = useRef(null)
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+
     const QuantityValue = (value) => {
         setTotalQuantity(value)
         console.log(value)
     }
-
     const increaseQnty = () => {
         let result = parseInt(TotalQuantity)
         let increasevalue = result + 1
         setTotalQuantity(increasevalue)
     }
-
     const decreaseQnty = () => {
         let result = parseInt(TotalQuantity)
         let decreasevalue = result - 1
@@ -37,16 +39,15 @@ const Product = () => {
             setTotalQuantity(decreasevalue)
         }
     }
-   
-    
-    const ProductSlider = useRef(null)
-
-    const nextSlide = () =>{
+    const nextSlide = () => {
         ProductSlider.current.slickNext()
     }
-    const prevSlide = (index) =>{
-        ProductSlider.current.slickPrev(index)
-        console.log(ProductSlider.current.slickPrev(index))
+    const prevSlide = () => {
+        ProductSlider.current.slickPrev()
+    }
+
+    const imageClicked = (index) => {
+        setCurrentSlide(index);
     }
 
     const settings = {
@@ -56,53 +57,80 @@ const Product = () => {
         slidesToScroll: 1,
         vertical: true,
         verticalSwiping: true,
+
         arrows: false,
-        
+        beforeChange: function (currentSlide, nextSlide) {
+            setCurrentSlide(nextSlide);
+        },
+        responsive: [
+            {
+                breakpoint: 599,
+                settings: {
+                    dots: true,
+                    slidesToShow: 1,
+                    vertical: false,
+                    verticalSwiping: false,
+                }
+            },
+        ]
     };
 
-   
+
+
     return (
         <>
             <Container maxWidth="xl">
-                <Grid container mt={1} mb={3} spacing={5}>
-                    <Grid item xs={6}>
-                        <Box display='flex' justifyContent={'end'} gap={1}>
-                            <div style={{ width: '30%', border: '1px solid #e52e06', borderRadius: '5px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }} >
-                                <Button sx={{color:'#e52e06'}} onClick={nextSlide}><KeyboardArrowUpOutlinedIcon /></Button>
-                                <Slider ref={ProductSlider}   {...settings}>
+                <Grid container mt={1} mb={3} spacing={5} >
+                    <Grid item xs={12} md={6}>
+                        <Box display={{ sm: 'flex', xs: 'block' }} gap={1}>
+                            <Box sx={{ width: { sm: '25%' }, border: '1px solid #e52e06', borderRadius: '5px', display: { xs: 'none', sm: 'flex' }, flexDirection: { sm: 'column' }, justifyContent: 'space-between' }} >
+                                <Button sx={{ color: '#e52e06' }} onClick={nextSlide}><KeyboardArrowUpOutlinedIcon /></Button>
+                                <Slider ref={ProductSlider} style={{ height: '100%' }}   {...settings}>
                                     {
                                         Json.productData[0].product_Gal.map((item, index) => {
-                                            return <Box >
-                                                <Box display={'flex'} justifyContent={'center'} >
-                                                    <Box width={'100px'} key={index} >
-                                                        <img style={{ width: '100%', height: '100%' }} src={item} />
+                                            return <Box height={'100%'}>
+                                                <Box height={'100%'} mx={'auto'}>
+                                                    <Box width={'105px'} mx={'auto'} key={index} onClick={() => imageClicked(index)} sx={{ cursor: 'pointer' }} >
+                                                        <img style={{ width: '100%', height: '100%' , objectFit:'contain' }} src={item} />
                                                     </Box>
                                                 </Box>
-
                                             </Box>
                                         })
                                     }
                                 </Slider>
-                                <Button sx={{color:'#e52e06'}}   onClick={prevSlide}><KeyboardArrowDownOutlinedIcon /></Button>
-                            </div>
-                            <div style={{ width: '70%', border: '1px solid #e52e06', borderRadius: '5px', overflow: 'hidden' }}>
-                                <ReactImageMagnify enlargedImagePosition='over'  {...{
+                                <Button sx={{ color: '#e52e06' }} onClick={prevSlide}><KeyboardArrowDownOutlinedIcon /></Button>
+                            </Box>
+                            <Box sx={{ width: { sm: '75%', xs: '100%' } , display:{sm:'flex'} , alignItems:'center' , border: '1px solid #e52e06', borderRadius: '5px', overflow: 'hidden' }}>
+                                <ReactImageMagnify enlargedImagePosition='over' className={`${Style['productmainImg']}`}  {...{
                                     smallImage: {
                                         alt: 'Wristwatch by Ted Baker London',
                                         isFluidWidth: true,
-                                        src: 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p9_1024x1024.jpg',
+                                        src: Json.productData[0].product_Gal[currentSlide],
                                     },
                                     largeImage: {
-                                        src: 'https://drou-electronics-store.myshopify.com/cdn/shop/products/p9_1024x1024.jpg',
+                                        src: Json.productData[0].product_Gal[currentSlide],
                                         width: 2000,
                                         height: 2000,
                                     },
                                 }} />
-                            </div>
+                                <Box className={`${Style['productmobileImg']}`}>
+                                    <Slider {...settings} >
+                                        {
+                                            Json.productData[0].product_Gal.map((item, index) => {
+                                                return <Box >
+                                                    <Box height={'300px'}><img style={{ width: '100%', height: '100%', objectFit: 'contain' }} src={item} /></Box>
+                                                </Box>
+                                            })
+                                        }
+                                    </Slider>
+                                </Box>
+
+
+                            </Box>
                         </Box>
 
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} md={6}>
                         <Box>
                             <Typography fontSize={'14px'} color='#e52e06' fontFamily={'Poppins'} mb={1}>Brand Name</Typography>
                             <Typography fontSize={'22px'} fontFamily={'Poppins'} mb={1}>Product Name</Typography>
