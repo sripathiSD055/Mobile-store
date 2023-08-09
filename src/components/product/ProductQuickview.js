@@ -1,16 +1,11 @@
 
-import { Box, Button, Grid, IconButton, TextField, Typography } from "@mui/material";
+import { Box, Button, Grid,  TextField, Typography } from "@mui/material";
 import Modal from '@mui/material/Modal';
 import { useState } from "react";
 import CardMedia from '@mui/material/CardMedia';
 import Style from '../../assets/css/main_style.module.css';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import CompareOutlinedIcon from '@mui/icons-material/CompareOutlined';
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { ContactSupportOutlined } from "@mui/icons-material";
-
 
 
 

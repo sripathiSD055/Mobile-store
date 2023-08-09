@@ -1,11 +1,10 @@
-import { Button, Typography } from "@mui/material";
+import {  Typography } from "@mui/material";
 import ProductCard from "../product/ProductcardComponent";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Box from '@mui/material/Box';
 import  jsonData from '../../assets/json/jsonData';
-import { useState } from "react";
 
 const settings = {
     dots: false,
@@ -45,7 +44,7 @@ const LatestProduct = () => {
                 <Typography color={'#003049'} textTransform={'capitalize'} fontWeight={500} fontFamily={'Poppins'} mb={3} fontSize={25} >Latest Products</Typography>
                 <Slider {...settings} >
                     {
-                        jsonData.productData.map((items, index) => {
+                        jsonData.ProductData.map((items, index) => {
                             return (
                                 <Box key={index}>
                                     <Box mx={1}>

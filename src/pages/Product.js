@@ -48,6 +48,7 @@ const Product = () => {
 
     const imageClicked = (index) => {
         setCurrentSlide(index);
+        console.log(currentSlide)
     }
 
     const settings = {
@@ -61,6 +62,7 @@ const Product = () => {
         arrows: false,
         beforeChange: function (currentSlide, nextSlide) {
             setCurrentSlide(nextSlide);
+            console.log(currentSlide)
         },
         responsive: [
             {
@@ -91,7 +93,7 @@ const Product = () => {
                                             return <Box height={'100%'}>
                                                 <Box height={'100%'} mx={'auto'}>
                                                     <Box width={'105px'} mx={'auto'} key={index} onClick={() => imageClicked(index)} sx={{ cursor: 'pointer' }} >
-                                                        <img style={{ width: '100%', height: '100%' , objectFit:'contain' }} src={item} />
+                                                        <img alt='thumblineimage' style={{ width: '100%', height: '100%' , objectFit:'contain' }} src={item} />
                                                     </Box>
                                                 </Box>
                                             </Box>
@@ -105,10 +107,10 @@ const Product = () => {
                                     smallImage: {
                                         alt: 'Wristwatch by Ted Baker London',
                                         isFluidWidth: true,
-                                        src: Json.productData[0].product_Gal[currentSlide],
+                                        src: Json.ProductData[0].product_Gal[currentSlide],
                                     },
                                     largeImage: {
-                                        src: Json.productData[0].product_Gal[currentSlide],
+                                        src: Json.ProductData[0].product_Gal[currentSlide],
                                         width: 2000,
                                         height: 2000,
                                     },
@@ -116,9 +118,9 @@ const Product = () => {
                                 <Box className={`${Style['productmobileImg']}`}>
                                     <Slider {...settings} >
                                         {
-                                            Json.productData[0].product_Gal.map((item, index) => {
+                                            Json.ProductData[0].product_Gal.map((item, index) => {
                                                 return <Box >
-                                                    <Box height={'300px'}><img style={{ width: '100%', height: '100%', objectFit: 'contain' }} src={item} /></Box>
+                                                    <Box height={'300px'}><img alt='thumblineimage' style={{ width: '100%', height: '100%', objectFit: 'contain' }} src={item} /></Box>
                                                 </Box>
                                             })
                                         }

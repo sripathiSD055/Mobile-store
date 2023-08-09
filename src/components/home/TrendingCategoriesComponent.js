@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { Box, Grid, Typography } from '@mui/material';
+import { Box,Typography } from '@mui/material';
 import Style from '../../assets/css/main_style.module.css';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';

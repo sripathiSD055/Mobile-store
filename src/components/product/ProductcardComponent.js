@@ -1,5 +1,5 @@
 
-import { Box, Button, Grid, IconButton, TextField, Typography } from "@mui/material";
+import { Box, Button, Grid, IconButton, Typography } from "@mui/material";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -10,8 +10,7 @@ import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import jsonData from '../../assets/json/jsonData';
 import { useState } from "react";
 import ProductQuickview from "./ProductQuickview";
-import { useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ProductCard = (props) => {
     const [open, setOpen] = useState(false);
@@ -19,10 +18,11 @@ const ProductCard = (props) => {
     const navigateProduct = useNavigate()
 
     const productModal = (propsId) => {
-        jsonData.productData.map((items) => {
+        jsonData.ProductData.map((items) => {
             if (items.product_id === propsId) {
                 setOpen(true)
             }
+            return ''
         })
     }
    

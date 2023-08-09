@@ -1,8 +1,7 @@
 import { Box, Container, Grid, IconButton, Stack, Typography } from "@mui/material";
-import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
 import ViewListOutlinedIcon from '@mui/icons-material/ViewListOutlined';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
@@ -87,7 +86,7 @@ const Categories = () => {
                         <Box mt={2}>
                             <Grid container spacing={2}>
                                 {
-                                    Json.productData.map((items, index) => {
+                                    Json.ProductData.map((items, index) => {
                                         return <Grid item key={index} lg={isGrid ? 3 : 12} md={isGrid ? 4 : 12} sm={isGrid ? 6 : 12} xs={12}>
                                             <ProductCard viewType={isGrid} productId={items.product_id} productTitle={items.product_title} productimg={items.product_img} productprice={items.price} productDes={items.product_des} />
                                         </Grid>

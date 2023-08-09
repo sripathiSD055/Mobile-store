@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import { Badge, Drawer, List, ListItem, ListItemButton, ListItemText, Typography } from '@mui/material';
+import { Badge, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import Style from '../../assets/css/main_style.module.css';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
@@ -18,7 +18,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 function Navgation(props) {
     const [isOpenToggle, setisOpenToggle] = useState(false);
-    const [cartCount, setCartCount] = useState(0)
+    // const [cartCount, setCartCount] = useState(0)
 
     const toggleDrawer = (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -158,7 +158,8 @@ function Navgation(props) {
                                 component='a'
                                 to='/cart'
                             >
-                                <Badge badgeContent={cartCount} color='error' showZero  >
+                                {/* <Badge badgeContent={cartCount} color='error' showZero  > */}
+                                <Badge badgeContent={0} color='error' showZero  >
                                     <ShoppingBagOutlinedIcon sx={{ fontSize: '25px' }} className={`${Style['nav_Links']}`} />
                                 </Badge>
                             </IconButton>

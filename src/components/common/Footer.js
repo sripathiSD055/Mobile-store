@@ -41,8 +41,8 @@ const Footer = () => {
                                 <Typography  mb={4} fontSize={14} fontFamily={'Poppins'} color={'#fff'} >
                                     Download our App and get extra 15% Discount on your first Order..!
                                 </Typography>
-                                <img src='https://cdn.shopify.com/s/files/1/0495/8021/2387/files/app-store.jpg' className={`${Style['footer_store_img']}`}></img>
-                                <img src='	https://cdn.shopify.com/s/files/1/0495/8021/2387/files/google-play.jpg' className={`${Style['footer_store_img']}`} ></img>
+                                <img src='https://cdn.shopify.com/s/files/1/0495/8021/2387/files/app-store.jpg' alt='iconsimage' className={`${Style['footer_store_img']}`}></img>
+                                <img src='	https://cdn.shopify.com/s/files/1/0495/8021/2387/files/google-play.jpg' alt='iconsimage' className={`${Style['footer_store_img']}`} ></img>
                             </Grid>
                         </Grid>
                     </Box>

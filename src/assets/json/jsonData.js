@@ -49,7 +49,7 @@ const jsonData = {
             button: 'Shop Now'
         },
     ],
-    productData: [
+    ProductData: [
 
         {
             product_id: 101,

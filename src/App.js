@@ -1,6 +1,5 @@
 import './App.css';
 import React from 'react';
-import TopNavbar from './components/common/Topnavbar';
 import Navgation from './components/common/Navigation';
 import Homepage from './pages/home';
 import About from './pages/about';
@@ -17,9 +16,8 @@ const App = () => {
   let location = useLocation()
   return (
     <div>
-      {/* <TopNavbar /> */}
       <Navgation />
-      {location.pathname == '/' ? '' : <NavBreadCrumbs />}
+      {location.pathname === '/' ? '' : <NavBreadCrumbs />}
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='categories/' element={<Categories />}>
