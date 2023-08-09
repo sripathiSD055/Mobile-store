@@ -49,13 +49,11 @@ function Navgation(props) {
                                 <Box
                                     sx={{ width: isOpenToggle ? 250 : 0 , padding:'10px'}}
                                     role="presentation"
-                                    onClick={toggleDrawer}
-                                    onKeyDown={toggleDrawer}
                                 >
                                     <List>
                                         {jsonData.AnchorLinks.map((anchor, index) => {
                                             if (!anchor.submenu) {
-                                                return < ListItem key={index} disablePadding >
+                                                return < ListItem key={index} disablePadding  onClick={()=>setisOpenToggle(false)}>
                                                     <ListItemText>
                                                         <NavLink key={index}
                                                             className={`${Style['nav_Links']}`}
@@ -66,7 +64,7 @@ function Navgation(props) {
                                                     </ListItemText>
                                                 </ListItem>
                                             }
-                                            return < ListItem key={index} disablePadding >
+                                            return < ListItem key={index} disablePadding  >
                                                 <ListItemText sx={{margin:0}}>
                                                     <Accordion elevation={0} >
                                                         <AccordionSummary className={`${Style['sidemenu_dropdown']}`}
@@ -84,8 +82,8 @@ function Navgation(props) {
                                                             <List sx={{padding:0  , paddingBottom:'10px'}}>
                                                                 {
                                                                     anchor.submenu.map((submenu, index) => {
-                                                                        return <ListItem key={index} sx={{padding:'5px 15px'}}>
-                                                                            <NavLink color="#fff" className={`${Style['nav_Links']}`} to={submenu.url}>{submenu.title}</NavLink>
+                                                                        return <ListItem key={index} sx={{padding:'5px 15px'}} onClick={() => setisOpenToggle(false) } >
+                                                                            <NavLink  color="#fff" className={`${Style['nav_Links']}`}   to={anchor.anchorName+'/'+submenu.title} style={{textTransform:'capitalize'}}>{submenu.title}</NavLink>
                                                                         </ListItem>
                                                                     })
                                                                 }

@@ -43,7 +43,7 @@ const ProductQuickview = (props) => {
                     top: '50%',
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
-                    width: '50%',
+                    width: {xs:'75%' , md:'50%'},
                     bgcolor: 'background.paper',
                     borderRadius: '10px',
                     boxShadow: 24,
@@ -51,10 +51,10 @@ const ProductQuickview = (props) => {
                     zIndex: 1,
                 }} >
                     <Grid container spacing={5} >
-                        <Grid item md={6}>
+                        <Grid item xs={12} sm={6}>
                             <Box>
                                 <Grid container spacing={2} >
-                                    <Grid item xs={2}>
+                                    <Grid item xs={2} sx={{display:{xs:'none' , sm:'block'}}}>
                                         image upload
                                     </Grid>
                                     <Grid item xs={10} >
@@ -63,7 +63,7 @@ const ProductQuickview = (props) => {
                             </Box>
 
                         </Grid>
-                        <Grid item md={6}>
+                        <Grid item xs={12} sm={6}>
                             <Typography sx={{ fontSize: 25, fontWeight: 500 }} color="#000" fontFamily={'Poppins'} mb={2}>
                                 {props.ProductTitle}
                             </Typography>
@@ -81,7 +81,7 @@ const ProductQuickview = (props) => {
 
                             <Box mt={1}>
                                 <Typography mb={2}>Quantity</Typography>
-                                <Box display={'flex'} gap={1} mb={2}>
+                                <Box display={{xs:'block',sm:'flex'}}gap={1} mb={2}>
                                     <Box display={'flex'}  >
                                         <Button variant='contained' className={`${Style['quickView_Btn']}`} sx={{ backgroundColor: '#eeefef', minWidth: '30px', color: '#000', borderRadius: '4px 0px 0px 4px', boxShadow: '0' }} onClick={decreaseQnty}>-</Button>
                                         <TextField
@@ -95,12 +95,12 @@ const ProductQuickview = (props) => {
                                         />
                                         <Button variant='contained' className={`${Style['quickView_Btn']}`} sx={{ backgroundColor: '#eeefef', minWidth: '30px', color: '#000', borderRadius: '0px 4px 4px 0px', boxShadow: '0' }} onClick={increaseQnty}>+</Button>
                                     </Box>
-                                    <Button fullWidth variant='outlined'   color='inherit' sx={{border:'1px solid #e52e06' , color:'#e52e06',}}>Add To Cart</Button>
+                                    <Button fullWidth variant='outlined'    color='inherit' sx={{mt:{xs:1 , sm:0} , border:'1px solid #e52e06' , color:'#e52e06',whiteSpace:'nowrap'}}>Add To Cart</Button>
                                 </Box>
                                 <Button fullWidth variant="contained"  color='error' sx={{backgroundColor:'#e52e06'}}>Buy Now</Button>
                                 <Box mt={2} display={'flex'} gap={1}>
-                                    <Button color='error' sx={{backgroundColor:'#e52e06'}} startIcon={<FavoriteBorderOutlinedIcon />}>Add to wishlist</Button>
-                                    <Button color='error' sx={{backgroundColor:'#e52e06'}} startIcon={<CompareOutlinedIcon />}>Compare</Button>
+                                    <Button color='error' startIcon={<FavoriteBorderOutlinedIcon />}>Add to wishlist</Button>
+                                    <Button color='error'  startIcon={<CompareOutlinedIcon />}>Compare</Button>
                                 </Box>
                             </Box>
                         </Grid>
