@@ -26,7 +26,7 @@ const PromotionBannerComponent = () => {
 
     return (
         <>
-            <Box mt={5}>
+            <Box mt={5} sx={{overflow:'hidden'}}>
                 <Slider {...settings}>
                     {jsonData.Custombanner.map((data, index) => {
                         return <Box key={index} >

@@ -41,7 +41,7 @@ const LatestProduct = () => {
 
     return (
         <>
-            <Box my={5}>
+            <Box my={5}  sx={{overflow:'hidden'}}>
                 <Typography color={'#003049'} textTransform={'capitalize'} fontWeight={500} fontFamily={'Poppins'} mb={3} fontSize={25} >Latest Products</Typography>
                 <Slider {...settings} >
                     {
