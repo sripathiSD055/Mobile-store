@@ -7,7 +7,7 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import CompareOutlinedIcon from '@mui/icons-material/CompareOutlined';
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import { ProductPageTabs } from '../components/product/ProductPageTabs'
-import ReactImageMagnify from 'react-image-magnify';
+// import ReactImageMagnify from 'react-image-magnify';
 import Json from '../assets/json/jsonData'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -101,7 +101,7 @@ const Product = () => {
                                 <Button sx={{ color: '#e52e06' }} onClick={prevSlide}><KeyboardArrowDownOutlinedIcon /></Button>
                             </Box>
                             <Box sx={{ width: { sm: '75%', xs: '100%' } , display:{sm:'flex'} , alignItems:'center' , border: '1px solid #e52e06', borderRadius: '5px', overflow: 'hidden' }}>
-                                <ReactImageMagnify enlargedImagePosition='over' className={`${Style['productmainImg']}`}  {...{
+                                {/* <ReactImageMagnify enlargedImagePosition='over' className={`${Style['productmainImg']}`}  {...{
                                     smallImage: {
                                         alt: 'Wristwatch by Ted Baker London',
                                         isFluidWidth: true,
@@ -112,7 +112,7 @@ const Product = () => {
                                         width: 2000,
                                         height: 2000,
                                     },
-                                }} />
+                                }} /> */}
                                 <Box className={`${Style['productmobileImg']}`}>
                                     <Slider {...settings} >
                                         {
